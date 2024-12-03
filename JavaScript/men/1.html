@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery_3.5.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btnFind").on("click", function() {
+					var car = $("select option:selected");
+					var code = car.attr('data-code');
+					var band = car.attr('data-band');
+					var img = car.attr('data-img');
+					var type = car.attr('value');
+					var price = car.attr('data-price');
+					html = "<tr>" +
+						"<th>" + code + "</th>" +
+						"<th>" + band + "</th>" +
+						"<th>" + type + "</th>" + 
+						"<th><img src='images/" + img + "' /></th>" + "<th>" + price +
+						"</th>" + "</tr>";
+					$("tbody").empty();
+					$(html).appendTo($("tbody"));
+				})
+			})
+		</script>
+		<style>
+			table {
+				width: 500px;
+				background-color: #333;
+			}
+
+			table tr {
+				height: 36px;
+			}
+
+			table tr th {
+				background-color: #fff;
+				border-collapse: collapse;
+			}
+
+			select {
+				width: 100px;
+				height: 30px;
+				padding: 5px 10px;
+			}
+
+			button {
+				height: 30px;
+			}
+			
+			img{
+				width: 150px;
+				height: 150px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h2>复仇者联盟集合</h2>
+		<p>
+			<label for="">请选择</label>
+			<select name="carList">
+				<option value="">--请选择--</option>
+				<option value="毒液" data-code='001' data-band='复仇者联盟' data-img="毒液.png" data-price="《毒液》">毒液
+				</option>
+				<option value="蜘蛛侠" data-code='002' data-band='复仇者联盟' data-img="蜘蛛侠2.png" data-price="《蜘蛛侠》">蜘蛛侠
+				</option>
+				<option value="雷神" data-code='003' data-band='复仇者联盟' data-img="雷神.png" data-price="《雷神》">雷神
+				</option>
+				<option value="美国队长" data-code='004' data-band='复仇者联盟达' data-img="美国队长.png" data-price="《美国队长》">美国队长
+				</option>
+			</select>
+			<button id="btnFind">查看详情</button>
+		</p>
+		<p>
+		<table>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>联盟</th>
+					<th>姓名</th>
+					<th>图片</th>
+					<th>来源</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				
+			</tbody>
+		</table>
+		</p>
+	</body>
+</html>

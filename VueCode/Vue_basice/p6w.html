@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染</title>
+    <script src="../Tools/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        搜索：<input type="text" v-model:value = "keyWorld"><br>
+        <ul>
+            <li>{{name}}</li>
+            <li v-for = "(stu,index) in students" :key = "stu.id">{{index}}---{{stu}}</li>
+        </ul>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#root' ,
+            data: {
+                keyWorld: '' ,
+                name: '阳光一版' ,
+                students: [
+                    {id: '001', name: '王明' ,age: 18} ,
+                    {id: '002', name: '鹏鹏' ,age: 33} ,
+                    {id: '003', name: '张三' ,age: 25}
+                ]
+            } ,
+            watch: {
+                keyWorld(){
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

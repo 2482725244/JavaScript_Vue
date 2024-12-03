@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Tools/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root">
+        姓: <input type="text" v-model="firstName"><br/><br>
+        名: <input type="text" v-model="lastName"><br><br>
+
+        姓名：<span>{{fullName}}</span>
+    </div>
+
+
+    <script>
+        Vue.config.devtools = true
+        new Vue({
+            el:'#root',
+            data:{
+                firstName: "张",
+                lastName: "三",
+                fullName: "???"
+            },
+            methods: {
+                // getFullName(){
+                //     return this.firstName + this.lastName
+                // }    
+            },
+            computed: {
+                // fullName: {
+                //     get(){
+                //         return this.firstName + this.lastName
+                //     }
+                // }
+            },
+            watch: {
+                firstName(newVlue){
+                    setTimeout(()=>{
+                        this.fullName = newVlue + this.lastName
+                    },1000)
+                },
+                lastName(newVlue){
+                    this.fullName = this.firstName + newVlue 
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

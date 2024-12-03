@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌套组件</title>
+    <script src="../Tools/vue.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+
+    const book = Vue.extend({
+        data(){
+            return {
+                name: "海运作业纸" ,
+                number: 100
+            }
+        },
+        template: `
+            <div>
+                <h2>道具--{{name}}</h2>
+                <h2>页数--{{number}}</h2>
+            </div>
+        `
+    })
+
+    const student = Vue.extend({
+        data(){
+            return {
+                name: "zhuangzhuang",
+                from: "海运"
+            }
+        },
+        template: `
+            <div>
+                <h1>我的名字是{{name}}</h1>
+                <h1>我来自{{from}}</h1>
+                <book></book>
+            </div>
+        `,
+        components: {
+            book
+        }
+
+    })
+
+    const app = Vue.extend({
+        template: `
+            <student></student>
+        `,
+        components: {
+            student
+        }
+    })
+
+
+    new Vue({
+        el: '#root',
+        template: `
+            <div>
+                <app></app>
+            </div>
+        `,
+        components:{
+            app
+        }
+    })
+
+</script>
+</html>

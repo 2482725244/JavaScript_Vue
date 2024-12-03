@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Tools/vue.js"></script>
+</head>
+<body>
+    
+    <div id = "root"> 
+        <p>hello {{msg}}---{{1+1}}</p>
+        {{address}}
+        <h1>{{msg}}</h1>
+        <hr>
+        <h1 v-text="Date.now()"></h1>
+    </div>
+
+
+
+    <script>
+          
+        var vm = new Vue({
+            el: '#root',
+            data: {
+                msg: "binbin",
+                address: "北京"
+            }
+        })
+        
+    </script>
+</body>
+</html>

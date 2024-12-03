@@ -1,0 +1,64 @@
+.maind {
+    height: 720px;
+    background-color: pink;
+    background: url(../images/dl.png) no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+.sr {
+    position: absolute;
+    right: 17px;
+    top: 145px;
+    width: 543px;
+    height: 319px;
+    border: 2px solid #161616;
+}
+h2 {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+}
+.zhang {
+    width: 260px;
+    margin: 26px auto;
+    color: #fff;
+}
+.zhang span {
+    font-size: 16px;
+    margin-right: 32px;
+}
+.mi span {
+    font-size: 16px;
+    margin-right: 32px;
+}
+.mi {
+    width: 260px;
+    margin: 26px auto;
+    color: #fff;
+}
+input {
+    width: 210px;
+    height: 26px;
+    background: rgba(0, 0, 0, .3);
+    border: 1px solid #fff;
+    color: #fff;
+}
+.sr a {
+    display: inline-block;
+    width: 87px;
+    text-align: center;
+    text-decoration: none;
+    background: rgba(0, 0, 0, .6);
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 6px;
+}
+.lg {
+    margin-left: 130px;
+}
+.ce {
+    margin-left: 23px;
+}
+

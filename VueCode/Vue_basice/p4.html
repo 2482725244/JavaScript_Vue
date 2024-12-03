@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定样式</title>
+    <style>
+      .a {
+        background-color: aqua;
+      }
+      .b {
+        background-color: blue;
+      }
+      .qq {
+        font-size: 55px;
+      }
+      .ee {
+        font-size: 300px
+      }
+    </style>
+    <script src="../Tools/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+      <div class = "a">{{msg}}</div>
+      <div v-bind:class = "classArr">{{msg}}</div>
+
+      <button v-on:click = "changeColor()">点击切换颜色</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+          el: '#root',
+          data: {
+            msg: 'zhuangzhuang' ,
+            classArr: ['b','qq']
+          },
+          methods: {
+            changeColor(){
+              this.classArr = ["a"]
+              console.log("aaaaaa")
+            }
+          }
+        })
+
+
+    </script>
+</body>
+</html>

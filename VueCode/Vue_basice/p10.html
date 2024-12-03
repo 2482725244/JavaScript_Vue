@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vc/vm内置原理</title>
+    <script src = "../Tools/vue.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+
+
+<script>
+  const student = Vue.extend({
+    data(){
+      return {
+        name: "jeck",
+        info: "vc实例对象"
+      }
+    },
+    methods: {
+      get(){
+        console.log(this)
+        console.log(this.xxxxx)
+      }
+    },
+    template:`
+      <div>
+        <h3>{{name}}</h3>
+        <h3>{{info}}</h3>
+        <button @click = "get">点我获取vc对象</button>
+      </div>
+    `
+
+  })
+
+  const vm = new Vue({
+    el: '#root',
+    data: {
+      name: "vm实例"
+    },
+    template: `
+      <div>
+          <h2>{{name}}</h2>
+          <student></student>
+      </div>
+    `,
+    components: {
+      student
+    }
+  })
+
+</script>
+</html>

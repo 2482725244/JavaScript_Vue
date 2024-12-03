@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    background-color: #F0F0F0;
+    border: 1px solid #CCCCCC;
+}
+.x {
+    width: 1000px;
+    margin: 0 auto;
+}
+.nav {
+    height: 40px;
+}
+.header {
+    margin-top: 30px;
+    height: 527px;
+}
+.zhongup {
+    margin-top: 15px;
+    height: 170px;
+}
+.zhongdown {
+    margin-top: 50px;
+    height: 120px;
+}
+.main {
+    margin-top: 80px;
+    height: 614px;
+}
+.footer {
+    margin-top: 32px;
+    height: 138px;
+}
+.navshu {
+    position: fixed;
+    right: 0;
+    top: 230px;
+    height: 450px;
+    width: 85px;
+}

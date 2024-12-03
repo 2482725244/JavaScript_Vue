@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src = "../Tools/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <friend></friend>
+        <student></student>
+    </div>
+</body>
+
+
+<script>
+
+    const student = Vue.extend({
+        data(){
+            return {
+                name: "binbin",
+                age: 13
+            }
+        },
+        template:`
+            <div>
+                <h1>学生姓名：{{name}}</h1>
+                <h1>学生年龄：{{age}}</h1>
+            </div>
+        `
+    })
+
+    const friend = Vue.extend({
+        data(){
+            return {
+                name: "zhuangzhuang",
+                age: 20
+            }
+        },
+        template:`
+            <div>
+                <h1>姓名：{{name}}</h1>
+                <h1>年龄：{{age}}</h1>
+            </div>
+        `
+    })
+
+
+    new Vue({
+        el:'#root',
+        components:{
+            student,
+            friend
+        }
+    })
+
+</script>
+
+</html>

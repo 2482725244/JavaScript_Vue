@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器本地存储</title>
+    <script src = "../Tools/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    {{msg}}
+    <button @click = "saveData">点我存数据</button>
+    <button @click = "dropData">点我删除历史</button>
+    <button @click = "dropAll">点我清空所有历史</button>
+
+  </div>
+</body>
+
+
+<script>
+  const vm = new Vue({
+    el: '#root',
+    data: {
+      name: "vm实例",
+      msg: '壮壮'
+
+    },
+    methods: {
+        saveData(){
+            localStorage.setItem('msg',this.msg)
+            sessionStorage.setItem('msg',this.msg)
+            localStorage.setItem('name',this.name)
+            sessionStorage.setItem('name',this.name)
+        },
+        dropData(){
+            localStorage.removeItem('msg')
+            sessionStorage.removeItem('msg')
+        },
+        dropAll(){
+            localStorage.clear()
+            sessionStorage.clear()
+        }
+    }
+  })
+
+</script>
+</html>

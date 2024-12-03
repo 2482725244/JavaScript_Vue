@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检测天气</title>
+    <script src="../Tools/vue.js"></script>
+</head>
+<body>
+    
+    <div id = "root">
+        <h1>今日天气是{{weather}}</h1>
+        <button @click = "changeWeather">点我切换</button>
+        <button @click = "add">点我加一: a = {{testDeep.a}}</button>
+    </div>      
+
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                isHot:true, 
+                testDeep: {
+                    a: 1 ,
+                    b: 2
+                }
+            },
+            methods: {
+                changeWeather(){
+                    this.isHot = !this.isHot
+                },
+                add(){
+                    this.testDeep.a++
+                }
+            },
+            computed: {
+                weather(){
+                    return this.isHot ? '炎热的' : '凉爽的'
+                }
+            },
+            watch: {
+                isHot: {
+                    immediate: true,
+                    depp: true,
+                    handler(){
+                        console.log('我被改变了')
+                    }
+                },
+                'testDeep.a': {
+                    immediate: true ,
+                    handler(newpr,oldpr){
+                        console.log('a加一了',newpr,oldpr)
+                    }
+                },
+                testDeep: {
+                    deep: true ,
+                    handler(){
+                        console.log('testDeep改变了')
+                    }
+                }
+            }
+
+        })
+
+        // vm.$watch('isHot',{
+        //     immediate: true,
+        //     deep: true,
+        //     handler(){
+        //         console.log('我被改变了')
+        //     }
+        // })
+
+    </script>
+</body>
+</html>

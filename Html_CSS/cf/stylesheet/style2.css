@@ -1,0 +1,20 @@
+.maind {
+    height: 720px;
+    background: url(../images/zhuce.png) no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+table {
+    color: #fff;
+    width: 650px;
+    margin: 20px auto;
+    margin-top: 80px;
+}
+tr {
+    margin-top: 23px;
+}
+input {
+    background: rgba(0, 0, 0, .3);
+    border: 1px solid #fff;
+    color: #fff;
+}

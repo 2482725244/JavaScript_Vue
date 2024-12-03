@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../Tools/vue.js"></script>
+</head>
+<body>
+
+
+    <div id="root" >
+        <div v-show = "f1">老大</div>
+        <div v-show = "f2">老二</div>
+        <div v-if = "f2">老三</div>
+        <div v-if = "f1">老四</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                f1: true ,
+                f2: 0
+            }
+        })
+    </script>
+</body>
+</html>
